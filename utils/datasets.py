@@ -35,7 +35,7 @@ class YOLODataset(Dataset):
 
         # read each image's corresponding label(.txt)
         xywhc = []
-        with open(os.path.join(self.label_path, self.filenames[idx].split('.')[0] + '.txt'), 'r') as f:
+        with open(os.path.join(self.label_path, '.'.join(self.filenames[idx].split('.')[:-1]) + '.txt'), 'r') as f:
             lines = f.readlines()
             for line in lines:
                 if line == '\n':
